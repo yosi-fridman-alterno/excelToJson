@@ -16,7 +16,7 @@ function App() {
     const workbook = read(data);
 
     const sheetName = workbook.SheetNames[0];
-    const XL_row_object = utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+    const XL_row_object = utils.sheet_to_row_object_array(workbook.Sheets[sheetName], {defval:""});
     const json_object = JSON.stringify(XL_row_object);
     const newLines = { Docs: JSON.parse(json_object) };
     console.log(newLines);
